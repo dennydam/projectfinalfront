@@ -345,7 +345,7 @@ export default {
 
 @media screen and (max-width: 500px) {
   #section01 {
-    height: 1800px;
+    height: 100%;
     background-color: #dde0d9;
   }
 }
