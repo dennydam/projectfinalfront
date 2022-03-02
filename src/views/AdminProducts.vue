@@ -6,9 +6,7 @@
       id="modal-product"
       v-model="dialog1"
       persistent
-      @click="resetForm"
       max-width="600"
-      hide-overlay="false"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -200,9 +198,6 @@
           </v-icon>
           <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
         </template>
-        <template v-slot:no-data>
-          <v-btn color="primary" @click="initialize"> Reset </v-btn>
-        </template>
       </v-data-table>
     </v-container>
     <!-- <v-simple-table>
@@ -315,10 +310,6 @@ export default {
     dialogDelete (val) {
       val || this.closeDelete()
     }
-  },
-
-  created1 () {
-    this.initialize()
   },
 
   methods: {

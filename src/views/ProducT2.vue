@@ -63,7 +63,6 @@ export default {
       this.sell = data.result.sell
       this.category = data.result.category
       document.title = `${this.name} | 購物網`
-      console.log('555')
     } catch (error) {
       console.log(error)
       this.$router.push('/')

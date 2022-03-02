@@ -109,6 +109,7 @@ import { Metabolism } from '../../node_modules/tdee-calculator/src/index.js'
 export default {
   data: () => ({
     BMR: '',
+    TDEE: '',
     form: {
       sex: '',
       age: 0,
