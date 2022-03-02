@@ -105,7 +105,7 @@
               <v-icon>mdi-account</v-icon>
               <p class="mt-4">{{ user.account }}</p>
               <v-spacer></v-spacer>
-              <v-btn @click="discussopen(item)">cc </v-btn>
+              <v-btn @click="discussopen(item)">點我 </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>

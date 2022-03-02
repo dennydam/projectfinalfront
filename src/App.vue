@@ -219,10 +219,10 @@ export default {
         icon: 'info',
         title: 'Let GO',
         submenu: [
-          { itemIndex: '2-1', itemTitle: 'count', url: '/login' },
+          { itemIndex: '2-1', itemTitle: 'TDEE&BMR', url: '/login' },
           { itemIndex: '2-1', itemTitle: 'Tranning', url: '/about' },
-          { itemIndex: '2-1', itemTitle: '購物車', url: '/cart' },
-          { itemIndex: '2-1', itemTitle: 'board', url: '/board' }
+          { itemIndex: '2-1', itemTitle: '飲食清單', url: '/cart' },
+          { itemIndex: '2-1', itemTitle: '討論區', url: '/board' }
         ]
       },
       { index: '3', icon: 'warning', title: '管理者', url: '/admin' }

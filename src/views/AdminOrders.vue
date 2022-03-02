@@ -17,7 +17,7 @@
           v-on="on"
           width="200px"
         >
-          Open Dialog
+         請新增
         </v-btn>
       </template>
       <v-card>
@@ -462,11 +462,8 @@ export default {
       this.editedItem = Object.assign({}, item)
       this.dialogDelete = true
     },
-    async deleteItemConfirm (item) {
-      this.editedIndex = this.products2.indexOf(item)
-      this.products2.splice(this.editedIndex, 1)
+    async deleteItemConfirm () {
       this.closeDelete()
-      console.log(this.products2[this.editedIndex])
       try {
         await this.api.delete(
           '/products2/' + this.products2[this.editedIndex]._id,
@@ -480,6 +477,7 @@ export default {
         console.log(error)
         alert('刪除失敗')
       }
+      this.products2.splice(this.editedIndex, 1)
     },
     close () {
       this.dialog = false

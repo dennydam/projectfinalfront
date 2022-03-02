@@ -91,12 +91,12 @@
       <v-container>
         <div class="form row">
           <div class="col-6 dddd">
-            <h1>CONTACT US</h1>
+            <h1 class="mb-10">CONTACT US</h1>
             <p>Address：台北市大同區塔城街39號4樓</p>
             <p>TEL：02-25589193</p>
             <p>FAX: 02-2558955</p>
           </div>
-          <div class="col-6">
+          <div class="col-6 contactr">
             <v-form class="text text--lighten">
               <v-text-field
                 color="white"
@@ -155,6 +155,10 @@
   object-fit: cover;
 }
 
+.contactr{
+  padding-right:10%;
+  padding-bottom: 13%;
+}
 #section02 {
   margin: auto;
   color: white;

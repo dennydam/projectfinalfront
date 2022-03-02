@@ -19,7 +19,7 @@
         </v-card>
       </v-col>
       <v-col cols="6" align="center" justify="center">
-        <v-btn to="/">回去訓練頁</v-btn>
+        <v-btn to="/about">回去訓練頁</v-btn>
       </v-col>
     </v-row>
   </div>

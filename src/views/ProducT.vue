@@ -26,7 +26,7 @@
 
           </v-col>
           </v-row>
-          <v-row class="mt-10">
+          <v-row class="mb-10">
           <v-col cols="1"></v-col>
           <v-col cols="3" align="center" justify="center" >
             <v-form ref="form" >
@@ -40,7 +40,7 @@
               >
               </v-text-field>
               <v-btn class="mr-10" @click="addCart">加入訓練菜單</v-btn>
-              <v-btn @click="addCart" >回去訓練頁</v-btn>
+              <v-btn @click="addCart" to="/about" >回去訓練頁</v-btn>
             </v-form>
           </v-col>
           </v-row>

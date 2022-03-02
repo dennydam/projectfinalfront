@@ -21,7 +21,7 @@
               <td><img :src="item.product.image" style="width: 100px" /></td>
               <td>
                 <v-row>
-                  <v-col>
+                  <v-col class="mt-5">
                     <v-form ref="form">
                       <v-text-field
                         outlined
@@ -35,7 +35,7 @@
                     </v-form>
                   </v-col>
                   <v-col>
-                    <v-btn class="mt-5" @click="updateCart(index, 0)"
+                    <v-btn class="mt-6" @click="updateCart(index, 0)"
                       >刪除</v-btn
                     >
                   </v-col>

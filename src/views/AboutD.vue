@@ -29,7 +29,7 @@
               md="6"
               lg="3"
               xl="3"
-              v-for="product in products2"
+              v-for="(product, index) in products2"
               :key="product._id"
             >
               <v-card max-width="250">
@@ -41,14 +41,14 @@
                 >
                   <v-card-title v-text="product.name"></v-card-title>
                 </v-img>
-                <v-btn icon @click="show = !show">
+                <v-btn icon @click="Trainbutton(index)">
                   <v-icon>{{
-                    show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                    show[index] ? 'mdi-chevron-up' : 'mdi-chevron-down'
                   }}</v-icon>
                 </v-btn>
 
                 <v-expand-transition>
-                  <div v-show="show">
+                  <div v-show="show2[index]">
                     <v-divider></v-divider>
 
                     <v-card-text v-text="product.description"></v-card-text>
@@ -77,7 +77,7 @@
           <v-row>
             <v-col
               class="mt-5"
-              v-for="product in products"
+              v-for="(product, index) in products"
               :key="product._id"
               cols="12"
               md="6"
@@ -94,13 +94,13 @@
                 <v-card-title v-text="product.name"></v-card-title>
                 </v-img>
 
-                <v-btn icon @click="show = !show">
+                <v-btn icon @click="foodbutton(index)">
                   <v-icon>{{
-                    show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                    show[index] ? 'mdi-chevron-up' : 'mdi-chevron-down'
                   }}</v-icon>
                 </v-btn>
                 <v-expand-transition>
-                  <div v-show="show">
+                  <div v-show="show[index]">
                     <v-divider></v-divider>
 
                     <v-card-text v-text="product.description"></v-card-text>
@@ -217,7 +217,8 @@ export default {
   // },
   data () {
     return {
-      show: false,
+      show2: [],
+      show: [],
       products2: [],
       products: [],
       tab: null,
@@ -231,13 +232,10 @@ export default {
           src: 'https://images.unsplash.com/photo-1581009137042-c552e485697a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+          src: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29ya291dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+          src: 'https://images.unsplash.com/photo-1598136490941-30d885318abd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
         }
       ],
       // cards: [
@@ -267,9 +265,20 @@ export default {
       icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram']
     }
   },
+  methods: {
+    foodbutton (index) {
+      this.show.splice(index, 1, !this.show[index])
+    },
+    Trainbutton (index) {
+      this.show2.splice(index, 1, !this.show2[index])
+    }
+  },
   async created () {
     try {
       const { data } = await this.api.get('/products')
+      for (let i = 1; i <= data.result.length; i++) {
+        this.show.push(false)
+      }
       this.products = data.result
     } catch (error) {
       this.$swal({
@@ -280,6 +289,9 @@ export default {
     }
     try {
       const { data } = await this.api.get('/products2')
+      for (let i = 1; i <= this.products2.length; i++) {
+        this.show2.push(false)
+      }
       this.products2 = data.result
     } catch (error) {
       this.$swal({
