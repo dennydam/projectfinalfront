@@ -24,11 +24,11 @@
         <v-container>
           <v-form ref="form">
             <v-text-field
-              label="商品名稱"
+              label="訓練名稱"
               v-model="form.name"
               type="text"
               required
-              placeholder="請輸入商品名稱"
+              placeholder="請輸入訓練名稱"
               :state="state.name"
               outlined
             >
@@ -52,7 +52,7 @@
               required
               rows="3"
               max-rows="6"
-              placeholder="請輸入商品說明"
+              placeholder="請輸入訓練說明"
               color="teal"
             >
             </v-textarea>

@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <div>
     <!-- <v-data-table class="table" :items="products2" :fields='fields' :items-per-page="5">
     </v-data-table> -->
     <v-dialog id="modal-product" v-model="dialog1" persistent max-width="1000">
@@ -85,20 +85,25 @@
           align="center"
           justify="center"
           cols="12"
-          md="6"
-          lg="3"
-          xl="3"
+          lg="4"
+          sm="6"
           v-for="item in products2"
           :key="item._id"
         >
-          <v-card class="discuss" max-width="250">
+          <v-card
+            elevation="12"
+            outlined
+            shaped
+            class="discuss"
+            max-width="344"
+          >
             <h1>主題:{{ item.name }}</h1>
             <v-card-text> </v-card-text>
-            <v-card-text >{{item.description}} </v-card-text>
+            <v-card-text>{{ item.description }} </v-card-text>
             <v-divider class="mx-4"></v-divider>
-            <v-card-actions >
+            <v-card-actions>
               <v-icon>mdi-account</v-icon>
-              <p class="mt-4">{{user.account}}</p>
+              <p class="mt-4">{{ user.account }}</p>
               <v-spacer></v-spacer>
               <v-btn @click="discussopen(item)">cc </v-btn>
             </v-card-actions>
@@ -114,20 +119,16 @@
               <h1>主題:{{ form.name }}</h1>
             </v-toolbar>
             <v-card-text>
-              <v-card-text
-                >描述:
-                {{ form.description }}</v-card-text
-              >
+              <v-card-text>描述: {{ form.description }}</v-card-text>
               <v-divider class="mx-4 my-4"></v-divider>
               <v-card-text d-flex v-for="mes in form.messages" :key="mes._D">
-               <v-row class="d-flex" >
+                <v-row class="d-flex">
                   <v-icon>mdi-account</v-icon>
-                <p class="my-5">{{ mes.account }}:{{ mes.text }}</p>
-                <v-spacer></v-spacer>
-                <p class="my-5">{{ mes.date }}</p>
+                  <p class="my-5">{{ mes.account }}:{{ mes.text }}</p>
+                  <v-spacer></v-spacer>
+                  <p class="my-5">{{ mes.date }}</p>
                 </v-row>
-                 <v-divider class="mx-4 my-4"></v-divider>
-
+                <v-divider class="mx-4 my-4"></v-divider>
               </v-card-text>
             </v-card-text>
 
@@ -171,7 +172,7 @@
       </tbody>
     </template>
   </v-simple-table> -->
-  </v-app>
+  </div>
 </template>
 <script>
 export default {
@@ -330,7 +331,7 @@ export default {
   margin-right: 100px;
 }
 
-.discuss{
+.discuss {
   border: 2px solid black;
 }
 
@@ -352,7 +353,7 @@ export default {
 @media screen and (max-width: 600px) {
   .additem {
     position: relative;
-    left: -2px;
+    left: 115px;
     margin: auto;
   }
 }

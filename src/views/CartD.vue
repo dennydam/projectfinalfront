@@ -24,6 +24,7 @@
                   <v-col>
                     <v-form ref="form">
                       <v-text-field
+                        outlined
                         v-model="products[index].quantity"
                         type="number"
                         required

@@ -100,10 +100,16 @@
       <div>
         <v-dialog v-model="dialog2" persistent max-width="350">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark v-bind="attrs" v-on="on">
+            <v-btn
+              color="primary"
+              v-if="!user.isLogin"
+              dark
+              v-bind="attrs"
+              v-on="on"
+            >
               Log in
             </v-btn>
-            <v-btn color="primary" @click="logout"> </v-btn>
+            <v-btn color="primary" v-else @click="logout">Log out</v-btn>
           </template>
           <v-card color="primary">
             <v-form v-model="valid" @submit.prevent="login" ref="form2">

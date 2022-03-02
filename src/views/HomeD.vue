@@ -66,31 +66,36 @@
       </v-row>
     </div>
     <div id="section04">
-        <v-row align-content="center" justify="center" class="mb-10">
-          <p class="abouttext">About us</p>
-        </v-row>
-        <v-row>
-          <v-col>
-            <v-parallax
-              dark
-              src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
-            >
-              <v-row align="center" justify="center">
-                <v-col class="text-center" cols="12">
-                  <h1 class="text-h4 font-weight-thin mb-4">
-                    ABOUT FITNESS BLENDER
-                  </h1>
-                  <h4 class="subheading">Build your application today!</h4>
-                </v-col>
-              </v-row>
-            </v-parallax>
-          </v-col>
-        </v-row>
+      <v-row align-content="center" justify="center" class="mb-10">
+        <p class="abouttext">About us</p>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-parallax
+            dark
+            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
+          >
+            <v-row align="center" justify="center">
+              <v-col class="text-center" cols="12">
+                <h1 class="text-h4 font-weight-thin mb-4">
+                  ABOUT FITNESS BLENDER
+                </h1>
+                <h4 class="subheading">Build your application today!</h4>
+              </v-col>
+            </v-row>
+          </v-parallax>
+        </v-col>
+      </v-row>
     </div>
     <section id="section03">
-        <div class="row form">
-          <div class="col-6">
+      <v-container>
+        <div class="form row">
+          <div class="col-6 dddd">
             <h1>CONTACT US</h1>
+            <h1>Home</h1>
+            <p>Address：台北市大同區塔城街39號4樓</p>
+            <p>TEL：02-25589193</p>
+            <p>FAX: 02-2558955</p>
           </div>
           <div class="col-6">
             <v-form class="text text--lighten">
@@ -117,50 +122,11 @@
                   color="white"
                 ></v-textarea>
               </v-container>
-              <!-- <v-btn class="mr-4" @click="submit"> submit </v-btn>
-              <v-btn @click="clear"> clear </v-btn> -->
             </v-form>
           </div>
         </div>
+      </v-container>
     </section>
-    <!-- <v-footer padless>
-      <v-card
-        color="primary"
-        flat
-        tile
-        class="indigo lighten-1 white--text text-center"
-      >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4 white--text"
-            icon
-          >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-text>
-
-        <v-card-text class="white--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
-          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-          lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
-          iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum
-          tempor vel ut orci. Orci varius natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus.
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-card-text>
-      </v-card>
-    </v-footer> -->
 
     <router-view />
   </v-main>
@@ -172,6 +138,10 @@
 #section01 {
   position: relative;
   height: 60vh;
+}
+.dddd {
+  text-align: left;
+  padding-left: 10%;
 }
 
 .container {
@@ -223,12 +193,6 @@
   color: white;
 }
 
-.form {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #section03 {
   text-align: center;
   color: white;
@@ -252,10 +216,9 @@
   font-size: 5rem;
   color: white;
 }
-#section04{
+#section04 {
   margin-bottom: 200px;
 }
-
 </style>
 
 <script>

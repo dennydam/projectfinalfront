@@ -12,65 +12,62 @@
         <v-container class="aaa">
           <div class="d-flex">
             <h1>訓練清單</h1>
-            <v-icon class="ml-6" color="black darken-2" size="50"> mdi-weight-lifter</v-icon>
+            <v-icon class="ml-6" color="black darken-2" size="50">
+              mdi-weight-lifter</v-icon
+            >
           </div>
           <v-divider class="mx-4 my-4"></v-divider>
 
-          <v-tabs v-model="tab" class="mb-4 tab" background-color="#dde0d9">
+          <!-- <v-tabs v-model="tab" class="mb-4 tab" background-color="#dde0d9">
             <v-tab v-for="item in items" :key="item.tab">
               {{ item.tab }}
             </v-tab>
-          </v-tabs>
-
-          <v-tabs-items v-model="tab" class="dd" background-color="#dde0d9">
-            <v-tab-item v-for="item in items" :key="item.tab" class="ccc">
-              <v-row>
-                <v-col
-                  cols="12"
-                  md="6"
-                  lg="3"
-                  xl="3"
-                  v-for="product in products2"
-                  :key="product._id"
+          </v-tabs> -->
+          <v-row>
+            <v-col
+              cols="12"
+              md="6"
+              lg="3"
+              xl="3"
+              v-for="product in products2"
+              :key="product._id"
+            >
+              <v-card max-width="250">
+                <v-img
+                  :src="product.image"
+                  class="white--text align-end"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  height="250px"
                 >
-                  <v-card max-width="250">
-                    <v-img
-                      :src="product.image"
-                      class="white--text align-end"
-                      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                      height="250px"
-                    >
-                      <v-card-title v-text="product.name"></v-card-title>
-                    </v-img>
-                    <v-btn icon @click="show = !show">
-                      <v-icon>{{
-                        show ? 'mdi-chevron-up' : 'mdi-chevron-down'
-                      }}</v-icon>
-                    </v-btn>
-                    <v-expand-transition>
-                      <div v-show="show">
-                        <v-divider></v-divider>
+                  <v-card-title v-text="product.name"></v-card-title>
+                </v-img>
+                <v-btn icon @click="show = !show">
+                  <v-icon>{{
+                    show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                  }}</v-icon>
+                </v-btn>
+                <v-expand-transition>
+                  <div v-show="show">
+                    <v-divider></v-divider>
 
-                        <v-card-text v-text="product.description"></v-card-text>
-                      </div>
-                    </v-expand-transition>
-                    <v-divider class="mx-4"></v-divider>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn>
-                        <router-link
-                          color="deep-purple lighten-2"
-                          text
-                          :to="'/product2/' + product._id"
-                          >Start
-                        </router-link>
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-tab-item>
-          </v-tabs-items>
+                    <v-card-text v-text="product.description"></v-card-text>
+                  </div>
+                </v-expand-transition>
+                <v-divider class="mx-4"></v-divider>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn>
+                    <router-link
+                      color="deep-purple lighten-2"
+                      text
+                      :to="'/product2/' + product._id"
+                      >Start
+                    </router-link>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
         </v-container>
       </div>
       <div class="container01">
@@ -314,15 +311,12 @@ export default {
   background-image: url(https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fHdvcmslMjBvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
   background-position: right top;
   background-color: #dde0d9;
+  margin: auto;
 }
 
 .ccc {
   background-color: #dde0d9;
   z-index: 11;
-}
-
-.dd {
-  width: 80%;
 }
 
 .footer {
