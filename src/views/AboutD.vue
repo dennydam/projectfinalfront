@@ -46,6 +46,7 @@
                     show ? 'mdi-chevron-up' : 'mdi-chevron-down'
                   }}</v-icon>
                 </v-btn>
+
                 <v-expand-transition>
                   <div v-show="show">
                     <v-divider></v-divider>
@@ -58,7 +59,6 @@
                   <v-spacer></v-spacer>
                   <v-btn>
                     <router-link
-                      color="deep-purple lighten-2"
                       text
                       :to="'/product2/' + product._id"
                       >Start
@@ -70,7 +70,7 @@
           </v-row>
         </v-container>
       </div>
-      <div class="container01">
+      <div class="container02">
         <v-container fluid class="aaa">
           <h1>飲食清單</h1>
           <v-divider class="mx-4 my-4"></v-divider>
@@ -91,7 +91,9 @@
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   height="250px"
                 >
+                <v-card-title v-text="product.name"></v-card-title>
                 </v-img>
+
                 <v-btn icon @click="show = !show">
                   <v-icon>{{
                     show ? 'mdi-chevron-up' : 'mdi-chevron-down'
@@ -108,9 +110,9 @@
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn>
+                  <v-btn  outlined color="#0D1E25">
                     <router-link
-                      color="deep-purple lighten-2"
+                      color="#0D1E25"
                       text
                       :to="'/product/' + product._id"
                       >Start

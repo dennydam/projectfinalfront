@@ -92,7 +92,6 @@
         <div class="form row">
           <div class="col-6 dddd">
             <h1>CONTACT US</h1>
-            <h1>Home</h1>
             <p>Address：台北市大同區塔城街39號4樓</p>
             <p>TEL：02-25589193</p>
             <p>FAX: 02-2558955</p>
