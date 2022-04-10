@@ -4,33 +4,115 @@
       <v-toolbar-title
         ><v-img src="./assets/logo.svg" width="180px" alt=""
       /></v-toolbar-title>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
+       <v-app-bar-nav-icon
+          class="hamburger"
+          color="white"
+          dark
+          @click.stop="drawer = !drawer"
+        >
+        </v-app-bar-nav-icon>
+
+         <!-- <v-navigation-drawer v-model="drawer" temporary>
+       <v-list>
+          <v-list-group
+            v-for="(n, index) in menu"
+            :key="index"
+            no-action
+          >
+            <template v-slot:activator>
+              <v-list-tile>
+                <v-list-tile-content>
+                  <v-list-tile-title>
+                    <router-link :to="n.link">{{ n.title }}</router-link>
+                  </v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </template>
+            <v-list-tile
+              v-for="subItem in item.items"
+              :key="subItem.title"
+            >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+              </v-list-tile-content>
+              <v-list-tile-action>
+                <v-icon>{{ subItem.action }}</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+        </v-list>
+    </v-navigation-drawer> -->
+
+      <v-navigation-drawer
+            height="100vh"
+            v-model="drawer"
+            absolute
+            temporary
+            color="primary"
+
+          >
+          <v-list>
+
+      <v-list-item :to="menu[0].url" class="my-6">
+        <v-list-item-title>{{ menu[0].title }}</v-list-item-title>
+      </v-list-item>
+
+      <v-list-group class="my-6"
+       color="white"
+      no-action
+        >
+            <template v-slot:activator>
+          <v-list-item-title>Let go</v-list-item-title>
+        </template>
+         <v-list-item
+            v-for="(item, index) in menu[1].submenu"
+              :key="index"
+              :to="item.url">
+            <v-list-item-content>
+              <v-list-item-title>{{ item.itemTitle }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+            <v-list-item>
+          </v-list-item>
+
+              <!-- <v-list-title
+              v-for="sub in submenu"
+              :key="sub.title"
+            >
+              <v-list-title-content>
+                <v-list-title-title>777777</v-list-title-title>
+              </v-list-title-content>
+            </v-list-title> -->
+
+      </v-list-group>
+
+      <v-list-item :to="menu[2].url" class="my-6">
+        <v-list-item-title>{{ menu[2].title }}</v-list-item-title>
+      </v-list-item>
+      </v-list>
+
+      <v-divider></v-divider>
+
+    </v-navigation-drawer>
       <v-spacer></v-spacer>
 
-      <!-- <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn v-for="(n, index) in menu" :key="index" :to="n.url" flat>{{
-          n.title
-        }}</v-btn>
-         <v-list v-if="n.submenu">
-            <v-list-item
-              v-for="(item, index) in n.submenu"
-              :key="index"
-              :to="item.url"
-            >
-               <v-list-item-title> {{ item.itemTitle }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-      </v-toolbar-items> -->
-      <!-- <v-menu class="hidden-md-and-up">
-        <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
-        <v-list>
-          <v-list-tile v-for="item in menu" :key="item.icon">
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-menu> -->
+      <!-- <v-tabs
+      dark
+      background-color="teal darken-3"
+      show-arrows
+    >
+      <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
+
+      <v-tab
+        v-for="(n, index) in menu"
+        :key="index"
+        :to="n.url"
+      >
+        {{ n.title }}
+
+      </v-tab>
+    </v-tabs> -->
 
       <v-toolbar-items class="hidden-sm-and-down">
         <v-menu
@@ -151,6 +233,7 @@
 
       <!-- <v-btn to="/About">註冊</v-btn> -->
     </v-app-bar>
+
     <v-main>
       <!-- <div class="cc">
         <video
@@ -199,6 +282,13 @@
 <script>
 export default {
   data: () => ({
+    drawer: null,
+    items: [
+      { title: 'Click Me' },
+      { title: 'Click Me' },
+      { title: 'Click Me' },
+      { title: 'Click Me 2' }
+    ],
     menu: [
       // { index: "1", title: "Home", url:"/about" },
       // {
@@ -283,45 +373,16 @@ export default {
   }
 }
 
-// export default {
-//   data() {
-//     return {
-//       valid: true,
-//       form: {
-//         dialog: false,
-//         account: "",
-//         password: "",
-//       },
-//       inputRules: [(v) => !!v || "必填"],
-//     };
-//   },
-//   methods: {
-//     async register() {
-//       const valid = this.$refs.form.validate();
-//       if (!valid) return;
-//       try {
-//         await this.api.post("/users", this.form);
-//         this.$swal({
-//           icon: "success",
-//           title: "成功",
-//           text: "註冊成功",
-//         });
-//         this.$router.push("/");
-//       } catch (error) {
-//         this.$swal({
-//            icon: "error",
-//           title: "失敗",
-//           text: "註冊失敗",
-//         });
-//       }
-//     },
-//   },
-// };
 </script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
-.register {
-  color: white;
+@import "@/scss/variable.scss";
+@import "@/scss/mixins/rwd.scss";
+
+@include lg {
+   .hamburger{
+     display: none;
+   }
 }
+
 </style>

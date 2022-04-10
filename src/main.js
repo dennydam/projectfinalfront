@@ -11,6 +11,7 @@ import 'animate.css/animate.min.css'
 import mixin from './mixin.js'
 import ImgInputer from 'vue-img-inputer'
 import 'vue-img-inputer/dist/index.css'
+import './scss/all.scss'
 
 Vue.mixin(mixin)
 Vue.component('ImgInputer', ImgInputer)

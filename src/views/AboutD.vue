@@ -238,30 +238,6 @@ export default {
           src: 'https://images.unsplash.com/photo-1598136490941-30d885318abd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
         }
       ],
-      // cards: [
-      //   {
-      //     title: '胸部訓練',
-      //     text: 'dddd',
-      //     src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-      //     flex: 3
-      //   },
-      //   {
-      //     title: '腿部訓練',
-      //     src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-      //     flex: 3
-      //   },
-      //   {
-      //     title: '肩部訓練',
-      //     src: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya291dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-      //     flex: 3
-      //   },
-      //   {
-      //     title: '背部訓練',
-      //     src: 'https://images.unsplash.com/photo-1611841315886-a8ad8d02f179?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTM1fHx3b3Jrb3V0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-      //     flex: 3
-      //   },
-      //   { text: 'eeeeeee' }
-      // ],
       icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram']
     }
   },
@@ -304,9 +280,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-// .card {
-//   max-width: 20%;
-// }
+
+@import "@/scss/variable.scss";
+@import "@/scss/mixins/rwd.scss";
 
 .tab {
   width: 70%;
@@ -337,13 +313,14 @@ export default {
   padding: 22px;
 }
 
-// .v-main__wrap {
-//     flex: 1 1 auto;
-//     max-width: 200%;
-//     position: relative;
+// @media screen and (max-width: 500px) {
+//   #section01 {
+//     height: 100%;
+//     background-color: #dde0d9;
+//   }
 // }
 
-@media screen and (max-width: 500px) {
+@include sm {
   #section01 {
     height: 100%;
     background-color: #dde0d9;
