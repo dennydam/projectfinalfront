@@ -40,7 +40,7 @@
               >
               </v-text-field>
               <v-btn class="mr-10" @click="addCart">加入訓練菜單</v-btn>
-              <v-btn @click="addCart" to="/about" >回去訓練頁</v-btn>
+              <!-- <v-btn @click="addCart" to="/about" >回去訓練頁</v-btn> -->
             </v-form>
           </v-col>
           </v-row>

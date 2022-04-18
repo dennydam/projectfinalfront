@@ -1,4 +1,5 @@
 <template>
+<v-main>
   <div class="section">
     <v-carousel hide-delimiters>
       <v-carousel-item
@@ -292,10 +293,10 @@ export default {
   max-width: 70%;
 }
 
-#section01 {
-  height: 1200px;
-  background-color: #dde0d9;
-}
+// #section01 {
+//   height: 1200px;
+//   background-color: #dde0d9;
+// }
 
 .container01 {
   background-image: url(https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fHdvcmslMjBvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
@@ -309,9 +310,9 @@ export default {
   z-index: 11;
 }
 
-.footer {
-  padding: 22px;
-}
+// .footer {
+//   padding: 22px;
+// }
 
 // @media screen and (max-width: 500px) {
 //   #section01 {
